@@ -8,8 +8,8 @@ class Project
   end
 
   def save
-    title = DB.exec("INSERT INTO projects (name) VALUES ('#{@title}') RETURNING id;")
-    @id = title.first().fetch("id").to_i
+    result = DB.exec("INSERT INTO projects (name) VALUES ('#{@title}') RETURNING id;")
+    @id = result.first().fetch("id").to_i
   end
 
   def ==(project_to_compare)
@@ -32,5 +32,10 @@ class Project
     title = project1.fetch("name")
     id = project1.fetch("id")
     Project.new({:title => title, :id => id})
+  end
+
+  def update(title)
+    @title = title
+    DB.exec("UPDATE projects SET name = '#{@title}' WHERE id = #{id};")
   end
 end
