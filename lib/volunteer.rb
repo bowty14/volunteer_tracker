@@ -11,4 +11,6 @@ class Volunteer
   def ==(volunter_to_compare)
     self.name() == volunter_to_compare.name()
   end
+
+  
 end
