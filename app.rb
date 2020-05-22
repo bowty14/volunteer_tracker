@@ -35,12 +35,18 @@ end
 
 get('/project/:id') do 
   @project = Project.find(params[:id].to_i())
+   @volunteers = Volunteer.all()
   erb(:project)
 end
 
 post('/project/:id') do
   volunteer_name = params[:volunteer_name]
-  volunteer = Volunteer.new({:name => volunteer_name, :project_id => @project_id, :id => nil})
+  volunteer = Volunteer.new({:name => :volunteer_name, :project_id => @project_id, :id => nil})
   volunteer.save
-  erb(:project)
+  erb(:volunteer)
+end
+
+get('/volunteers') do
+  @volunteers = Volunteer.all()
+  erb(:volunteer)
 end
