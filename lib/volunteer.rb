@@ -40,4 +40,17 @@ class Volunteer
       nil
     end
   end
+
+  def self.find_by_project(proj_id)
+    volunteers = []
+    returned_volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{proj_id};")
+    returned_volunteers.each() do |volunteer|
+      name = volunteer.fetch("name")
+      id = volunteer.fetch("id")
+      project_id = volunteer.fetch("project_id")
+      volunteers.push(Volunteer.new({:name => name, :id => id, :project_id => project_id}))
+    end
+    volunteers
+  end
+
 end
