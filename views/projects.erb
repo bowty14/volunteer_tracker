@@ -1,0 +1,11 @@
+<h2>Projects currently being worked on</h2>
+
+<% if @projects.any? %>
+<ul>
+  <% @projects.each do |project|%>
+  <li><a href="/project/<%= project.id %>"><%= project.title %></a></li>
+  <% end %>
+</ul>
+<% else %>
+  <p>There are currently not projects at the moment, please check back later!</p>
+<% end %>
