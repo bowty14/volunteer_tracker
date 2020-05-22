@@ -1,0 +1,25 @@
+<h2><%= @project.title %></h2>
+
+<h4>Add volunteers to this project</h4>
+<br>
+<br>
+<form action="/project/<%= @project.id%>" method="post">
+  <div class="form-group">
+    <input type="text" name="volunteer_name" id="volunteer" placeholder="Name of volunteer">
+  </div>
+  <br>
+  <button class="btn-danger">Add volunteer</button>
+</form>
+
+<h3>Volunteers working on this project</h3>
+
+<% if @volunteers %>
+<ul>
+  <% @volunteers.each do |volunteer|%>
+  <li><a href="/volunteer/<%= volunteer.id%>"><%= volunteer.name %></a></li>
+  <% end %>
+</ul>
+
+<% else %>
+  <p>There are no volunteers currently on this project. Why don't you assign some.</p>
+  <% end %>
