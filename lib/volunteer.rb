@@ -7,4 +7,8 @@ class Volunteer
     @id = attributes.fetch(:id)
     @project_id = attributes.fetch(:project_id)
   end
+
+  def ==(volunter_to_compare)
+    self.name() == volunter_to_compare.name()
+  end
 end
