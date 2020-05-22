@@ -20,7 +20,7 @@ class Project
     returned_projects = DB.exec('SELECT * FROM projects')
     projects = []
     returned_projects.each do |project|
-      title = project.fetch("title")
+      title = project.fetch("name")
       id = project.fetch("id")
       projects.push(Project.new({:title => title, :id => id}))
     end
