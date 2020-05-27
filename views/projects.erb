@@ -1,9 +1,11 @@
-<h2>Projects currently being worked on</h2>
-
+<h1>Projects currently being worked on</h1>
+<br>
+<br>
+<br>
 <% if @projects.any? %>
 <ul>
   <% @projects.each do |project|%>
-  <li><a href="/project/<%= project.id %>"><%= project.title %></a></li>
+  <h2><a href="/project/<%= project.id %>"><%= project.title %></a></h2>
   <% end %>
 </ul>
 <% else %>

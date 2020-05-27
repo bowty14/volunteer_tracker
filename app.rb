@@ -49,5 +49,9 @@ end
 
 get('/volunteers') do
   @volunteers = Volunteer.all()
-  erb(:volunteer)
+  erb(:volunteers)
+end
+
+get('/volunteer/:id') do
+  "hello"
 end

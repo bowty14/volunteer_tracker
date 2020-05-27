@@ -1,7 +1,11 @@
+<h1>Here is a list of all our current volunteers</h1>
+<br>
+<br>
+<br>
 <% if @volunteers.any? %>
 <ul>
   <% @volunteers.each do |volunteer|%>
-  <li><a href="/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a></li>
+  <h3 <%= volunteer.id %>><%= volunteer.name %></h3>
   <% end %>
 </ul>
 <% else %>
