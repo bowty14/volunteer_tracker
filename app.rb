@@ -69,5 +69,23 @@ get('/volunteers') do
 end
 
 get('/volunteer/:id') do
-  "hello"
+  @volunteer = Volunteer.find(params[:id].to_i())
+  erb(:volunteer)
+end
+
+get '/volunteer/:id/edit' do
+  @volunteer = Volunteer.find(params[:id].to_i())
+  erb(:edit_volunteer)
+end
+
+patch '/volunteer/:id' do
+  @volunteer = Volunteer.find(params[:id].to_i())
+  @volunteer.update(params[:name])
+  redirect to '/volunteers'
+end
+
+delete '/volunteer/:id' do
+  @volunteer = Volunteer.find(params[:id].to_i())
+  @volunteer.delete
+  redirect to '/volunteers'
 end
