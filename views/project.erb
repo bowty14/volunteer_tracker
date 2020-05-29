@@ -1,6 +1,8 @@
 <h2><%= @project.title %></h2>
-
-<h4>Add volunteers to this project</h4>
+<h5><a href="/project/<%= @project.id %>/edit">Edit project</a></h5>
+<h5><a href="/project/<%= @project.id %>/delete">Delete project</a></h5>
+<br>
+<h3>Add volunteers to this project</h3>
 <br>
 <br>
 <form action="/project/<%= @project.id%>/volunteers/volunteers_id" method="post">
@@ -10,6 +12,7 @@
   <br>
   <button class="btn-danger">Add volunteer</button>
 </form>
+
 
 <h3>Volunteers working on this project</h3>
 

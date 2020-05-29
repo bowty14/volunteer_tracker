@@ -36,8 +36,12 @@ end
 get('/project/:id') do 
   @project = Project.find(params[:id].to_i())
   @volunteers = @project.volunteers
-   
   erb(:project)
+end
+
+get('/project/:id/edit') do
+  "hello"
+  erb(:edit_project)
 end
 
 post('/project/:id/volunteers/volunteers_id') do
