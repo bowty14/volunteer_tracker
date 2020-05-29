@@ -40,8 +40,20 @@ get('/project/:id') do
 end
 
 get('/project/:id/edit') do
-  "hello"
+  @project = Project.find(params[:id].to_i())
   erb(:edit_project)
+end
+
+patch '/project/:id' do
+  @project = Project.find(params[:id].to_i())
+  @project.update(params[:title])
+  redirect to('/projects')
+end
+
+delete '/project/:id' do
+  @project = Project.find(params[:id].to_i())
+  @project.delete
+  redirect to '/projects'
 end
 
 post('/project/:id/volunteers/volunteers_id') do
