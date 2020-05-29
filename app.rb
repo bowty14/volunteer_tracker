@@ -33,6 +33,7 @@ get('/projects/:id') do
 erb(:projects)
 end
 
+
 get('/project/:id') do 
   @project = Project.find(params[:id].to_i())
   @volunteers = @project.volunteers
@@ -60,7 +61,7 @@ post('/project/:id/volunteers/volunteers_id') do
   @project = Project.find(params[:id].to_i())
   @volunteer = Volunteer.new({:name => params[:volunteer_name], :id => nil, :project_id => params[:id]})
   @volunteer.save
-  redirect to('/projects')
+  redirect to '/projects'
 end
 
 get('/volunteers') do

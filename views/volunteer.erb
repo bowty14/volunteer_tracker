@@ -1,2 +1,8 @@
 <h2><%= @volunteer.name %></h2>
-<h5><a href="/volunteer/<%= @volunteer.id%>/edit">Edit volunteer</a></h5>
+<h4><a href="/volunteer/<%= @volunteer.id%>/edit">Edit volunteer</a></h4>
+<br>
+<form action="/volunteer/<%= @volunteer.id%>" method="post">
+<input type="hidden" name="_method" value="delete">
+<br>
+<button type="submit" class="btn btn-danger">Remove volunteer</button>
+</form>

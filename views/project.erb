@@ -1,6 +1,12 @@
 <h2><%= @project.title %></h2>
 <h5><a href="/project/<%= @project.id %>/edit">Edit project</a></h5>
 <br>
+<form action="/project/<%= @project.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <br>
+  <button type="submit" class="btn btn-danger">Delete project</button>
+  </form> 
+  <br>
 <h3>Add volunteers to this project</h3>
 <br>
 <br>
