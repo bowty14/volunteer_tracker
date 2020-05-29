@@ -10,8 +10,8 @@ This application allows the user to create, view, update and delete projects. Th
 
 ## Specifications
 
-|   Behavior Description       |  Input Ex.   |        Output Ex.        |
-|------------------------------|--------------|--------------------------|
+|   Behavior Description                              |  Input Ex.                          |        Output Ex.                   |
+|----------------------------------------------------|---------------------------------------|-------------------------------------------------|
 |1. As a non-profit employee, I want to view, and add projects.|Type project name in text field of homepage.(Coffee)|When you hit the submit button you will be redirected to the projects page where you can view the created project(s)|
 |2. As a non-profit employee, I want to update projects.|When you click on the project name, under the current projects tab you can click on the link "Edit project" Then type the name you'd like to update the project to(Toffee)|On submit you will return to the projects page where you can see the selected project has been updated.|
 |3. As a non-profit employee, I want to delete projects.|When you click on the project name, under the current projects tab you can click on the link "Delete project"|On submit you will return to the projects page where you can see the selected project has been deleted.|
