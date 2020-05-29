@@ -37,6 +37,24 @@ describe(Volunteer) do
     end
   end
 
+  describe('#update') do
+    it('allows a user to update a volunteer') do
+      volunteer = Volunteer.new({:name => 'Tyler', :project_id => 1, :id => nil})
+      volunteer.save
+      volunteer.update('Josh')
+      expect(volunteer.name).to(eq('Josh'))
+    end
+  end
+
+  describe('#delete') do
+    it 'allows a user to delete a volunteer' do
+      volunteer = Volunteer.new({:name => 'Tyler', :project_id => 1, :id => nil})
+      volunteer.save
+      volunteer.delete
+      expect(Volunteer.all).to(eq([]))
+    end
+  end
+
   describe('.find') do
     it 'returns a volunteer by id' do
       volunteer1 = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
